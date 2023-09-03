@@ -1,5 +1,5 @@
 // Assignment code here
-
+//would start like var writePassword()
 
 
 // Get references to the #generate element
