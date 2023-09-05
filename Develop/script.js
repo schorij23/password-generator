@@ -3,18 +3,21 @@
 // var generateBtn = document.querySelector("#generate");
 // function generatePassword() {
 // // Critia prompts for password to generate
+
 // var uppercase = confirm("Your password should have uppercase letters! Click OK to continue");
 // var lowercase = confirm("Your password should have lowercase letters! Click OK to continue");
 // var symbols = confirm("Your password should have a symbol! Click OK to continue");
 // var numbers = confirm("Your password should have a number! Click OK to continue");
 // var keyLength = prompt("Password must be between 8 and 128 characters! Click OK to continue");
 
+//// allowable password variables
 
 // var uppercaseABC = "ABCDEFGHIJKLMNOPQRSTUVWXZ";
 // var lowercaseABC ="abcdefghijklmnopqrstuvwxyz";
 // var specialSymbols ="!@#$%^&*()?.<\>|=+:;,[-_]"
 // var numeric ="0123456789"
 // var multiSelect =[]
+
 
 
 // var writePassword
