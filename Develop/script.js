@@ -1,24 +1,22 @@
-// Assignment code here
-
+// List of Character Arrays for the password
 var lowerCaseChar = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCaseChar = ['A', 'B', 'C', 'D', 'E', "F", 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numberChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', ':', '.', '-', '_', '/',];
-//var minLength = 8;
-// var maxLength = 128
 
-//function for password prompt option and variable to store length
+//function for password prompt and variable to store password length
 function passwordCharOptions() {
   var passwordLength = parseInt(
     prompt('Enter password length between 8 and 128 Characters'), 12
   );
 
-  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+//condition to make sure password is a number and between 8 and 128 Characters  
+  if (Number.isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     alert('Password length must be a number and be between 8 and 128 Characters');
     return null;
   }
 
-//let passwordLength = prompt("Enter required password length between 8 and 128")
+//variables used to confirm and store Character Types
 let passwordLowercase = confirm("Do you want to use Lowercase, Click Ok for Yes")
 let passwordUppercase = confirm("Do you want to use Uppercase, Click Ok for Yes")
 let passwordNumber = confirm("Do you want to use Numbers, Click Ok for Yes")
@@ -37,13 +35,6 @@ let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes")
     passwordSpecialC
   }
 }
-//1. Prompt the user for the password criteria
-//    a. Password Length 8 - 128
-//    b. Lowercase, uppercase, numbers, special characters
-
-
-//2. Valadate the imput
-// if ok to lowercase add random lowercase characters to password
 
 //3. Generate Password based on criteria
 function generatePassword() {
@@ -74,7 +65,6 @@ function generatePassword() {
     genPassword += randomChar 
       
   }
-
 
   //4. Display password to the page
   return genPassword;
