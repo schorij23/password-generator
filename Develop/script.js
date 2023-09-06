@@ -1,75 +1,83 @@
 // Assignment code here
 
-// // Critia prompts for password to generate
+var lowerCaseChar = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var upperCaseChar = ['A', 'B', 'C', 'D', 'E', "F", 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var numberChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', ':', '.', '-', '_', '/',];
+//var minLength = 8;
+// var maxLength = 128
 
-// var uppercase = confirm("Your password should have uppercase letters! Click OK to continue");
-// var lowercase = confirm("Your password should have lowercase letters! Click OK to continue");
-// var symbols = confirm("Your password should have a symbol! Click OK to continue");
-// var numbers = confirm("Your password should have a number! Click OK to continue");
-// var passKey = prompt("Password must be between 8 and 128 characters! Click OK to continue");
+//function for password prompt option and variable to store length
+function passwordCharOptions() {
+  var passwordLength = parseInt(
+    prompt('Enter password length between 8 and 128 Characters'), 12
+  );
 
-// // allowable password variables
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    alert('Password length must be a number and be between 8 and 128 Characters');
+    return null;
+  }
 
-// var uppercaseL = "ABCDEFGHIJKLMNOPQRSTUVWXZ";
-// var lowercaseL ="abcdefghijklmnopqrstuvwxyz";
-// var symbols ="!@#$%^&*()?.<\>|=+:;,[-_]"
-// var numbers ="0123456789"
-// var multiSelect =[];
-
-
-// // password match criteria
-
-// if (passKey < 8 || passKey > 128) {
-// alert("Password does not meet the criteria")
-// var passKey = prompt ("Password must be between 8 and 128 characters"); }
-
-// if (uppercaseL === false && lowercaseL === false && symbols === false && numbers
-// === false) {
-//  return "Password does not meet the criteria"} 
-
-// var writePassword = function () {  
-//   var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//   var passKey;
-
-//   if(passKey <8 || passKey > 128) {
-//     alert ("Password does not meet criteria");
-//     var passKey = prompt("Password must be between 8 and 128 characters in length");
-//   }
-
-//   for (var i = 0; i <= passKey; i++) {
-//     var randomPass = Math.floor(Math.random() * chars.length);
-//   }
-// }
-
-
-function generatePassword () {
-   var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-   var minLength = 8;
-   var maxLength = 128;
-
-   var passwordLength = Math.floor(Math.random() * (maxLength - minLength +1)) + minLength;
+//let passwordLength = prompt("Enter required password length between 8 and 128")
+let passwordLowercase = confirm("Do you want to use Lowercase, Click Ok for Yes")
+let passwordUppercase = confirm("Do you want to use Uppercase, Click Ok for Yes")
+let passwordNumber = confirm("Do you want to use Numbers, Click Ok for Yes")
+let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes");
     
-    let password = prompt ("Enter password between 8 and 128 characters")
-      console.log(password);
-    console.log ("You clicked the button")
-  
+  if (!passwordLowercase && !passwordUppercase && !passwordNumber && !passwordSpecialC) {
+    alert('Must have one Character Type');
+    return null;
+  }
+
+  return {
+    passwordLength: passwordLength,
+    passwordLowercase,
+    passwordUppercase,
+    passwordNumber,
+    passwordSpecialC
+  }
+}
 //1. Prompt the user for the password criteria
 //    a. Password Length 8 - 128
 //    b. Lowercase, uppercase, numbers, special characters
 
 
 //2. Valadate the imput
-
+// if ok to lowercase add random lowercase characters to password
 
 //3. Generate Password based on criteria
-  for (let i = 0; i < passwordLength; i++) {
-   var randomPass = Math.floor(Math.random() * chars.length);
-   password += chars[randomPass];
+function generatePassword() {
+  var userOptions = passwordCharOptions();
+  
+  var possibleArrays = [];
+
+  if (userOptions.passwordLowercase) {
+      possibleArrays = possibleArrays.concat(lowerCaseChar)
+  }
+
+  if (userOptions.passwordUppercase) {
+    possibleArrays = possibleArrays.concat(upperCaseChar)
+  }
+
+  if (userOptions.passwordNumber) {
+    possibleArrays = possibleArrays.concat(numberChar)
+  }
+
+  if (userOptions.passwordSpecialC) {
+    possibleArrays = possibleArrays.concat(specialChar)
+  }
+    var genPassword = "";
+
+    for (let i = 0; i < userOptions.passwordLength; i++) {
+    var randomNumber = Math.floor(Math.random() * possibleArrays.length);
+    var randomChar = possibleArrays[randomNumber]
+    genPassword += randomChar 
+      
   }
 
 
-//4. Display password to the page
-  return"Generated password goes here";
+  //4. Display password to the page
+  return genPassword;
 }
 
 // Get references to the #generate element
