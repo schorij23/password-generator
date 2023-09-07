@@ -42,10 +42,10 @@ let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes o
   }
 }
 
-// Function to generate password based on criteria
+// Function to generate password
 function generatePassword() {
-  var userOptions = passwordCharOptions();
-  
+// Variable userOptions to store previous function and possibleArrays to store empty array
+  var userOptions = passwordCharOptions(); 
   var possibleArrays = [];
 
   if (userOptions.passwordLowercase) {
