@@ -10,8 +10,17 @@ function passwordCharOptions() {
     prompt('Enter password length between 8 and 128 Characters'), 12
   );
 
+  var minLength = 8;
+  var maxLength = 128;
+
 //condition to make sure password is a number and between 8 and 128 Characters  
-  if (Number.isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+  
+// if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+//   alert('Password length must be a number and be between 8 and 128 Characters');
+//   return null;
+// }
+
+if (Number.isNaN(passwordLength) || passwordLength < minLength || passwordLength > maxLength) {
     alert('Password length must be a number and be between 8 and 128 Characters');
     return null;
   }
@@ -66,7 +75,7 @@ function generatePassword() {
       
   }
 
-  //4. Display password to the page
+  // Display password to the page
   return genPassword;
 }
 
