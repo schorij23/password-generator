@@ -4,32 +4,35 @@ var upperCaseChar = ['A', 'B', 'C', 'D', 'E', "F", 'G', 'H', 'I', 'J', 'K', 'L',
 var numberChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = [' ','!','"','#','$','%','&','(',')','*','+',',','-','/',':',';','<','=','>','?','@','[',']','^','_','`','{','|','}','~'];
 
-//function for password prompt, variable to store password length, parses string to Integer
+//Function for password prompt, variable to store password length, parses string to Integer
 function passwordCharOptions() {
   var passwordLength = parseInt(
-    prompt('Enter password length between 8 and 128 Characters'),
+    prompt('Enter a password length between 8 and 128 Characters'),
   );
 
-  // Variable  to store Maximum and Minimum Password Lengths
+//Variable to store Maximum and Minimum Password Lengths
 var minLength = 8;
 var maxLength = 128;
 
+//Conditional Statement that checks requirements for a Password Number between 8 and 128 Characters or the prompt will end
 if (Number.isNaN(passwordLength) || passwordLength < minLength || passwordLength > maxLength) {
     alert('Password length must be a number and be between 8 and 128 Characters');
     return null;
   }
 
 //variables used to confirm and store Character Types
-let passwordLowercase = confirm("Do you want to use Lowercase, Click Ok for Yes")
-let passwordUppercase = confirm("Do you want to use Uppercase, Click Ok for Yes")
-let passwordNumber = confirm("Do you want to use Numbers, Click Ok for Yes")
-let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes");
-    
+let passwordLowercase = confirm("Do you want to use Lowercase, Click Ok for Yes or Cancel for No")
+let passwordUppercase = confirm("Do you want to use Uppercase, Click Ok for Yes or Cancel for No")
+let passwordNumber = confirm("Do you want to use Numbers, Click Ok for Yes or Cancel for No")
+let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes or Cancel for No");
+
+//Conditional Statement that checks the user password for the minimum required characters or the prompt will end
   if (!passwordLowercase && !passwordUppercase && !passwordNumber && !passwordSpecialC) {
-    alert('Must have one Character Type');
+    alert('Password must have one Character Type');
     return null;
   }
 
+//returns the user imput from the function passwordChaOptions
   return {
     passwordLength: passwordLength,
     passwordLowercase,
@@ -39,7 +42,7 @@ let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes")
   }
 }
 
-//3. Generate Password based on criteria
+// Function to generate password based on criteria
 function generatePassword() {
   var userOptions = passwordCharOptions();
   
