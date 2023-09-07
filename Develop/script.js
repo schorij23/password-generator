@@ -44,10 +44,11 @@ let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes o
 
 // Function to generate password
 function generatePassword() {
-// Variable userOptions to store previous function and possibleArrays to store empty array
+// Variable userOptions to store passwordCharOptions function and possibleArrays variable to store an empty array
   var userOptions = passwordCharOptions(); 
   var possibleArrays = [];
 
+//Conditional statements that adds to the possibleArray using character types from the  passwordCharOptions function stored in userOptions
   if (userOptions.passwordLowercase) {
       possibleArrays = possibleArrays.concat(lowerCaseChar)
   }
