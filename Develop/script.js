@@ -1,4 +1,4 @@
-// List of Character Arrays for the password
+// List of Character stored in Arrays for the password
 var lowerCaseChar = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCaseChar = ['A', 'B', 'C', 'D', 'E', "F", 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numberChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -32,7 +32,7 @@ let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes o
     return null;
   }
 
-//returns the user imput from the function passwordChaOptions
+//returns the user imput from the prompts in the function passwordChaOptions
   return {
     passwordLength: passwordLength,
     passwordLowercase,
@@ -48,7 +48,7 @@ function generatePassword() {
   var userOptions = passwordCharOptions(); 
   var possibleArrays = [];
 
-//Conditional statements that adds to the possibleArray using character types from the  passwordCharOptions function stored in userOptions
+//Conditional statements that adds characters types to the possibleArray using the passwordCharOptions function stored in userOptions
   if (userOptions.passwordLowercase) {
       possibleArrays = possibleArrays.concat(lowerCaseChar)
   }
@@ -64,16 +64,19 @@ function generatePassword() {
   if (userOptions.passwordSpecialC) {
     possibleArrays = possibleArrays.concat(specialChar)
   }
+//Variable to store the password that was generated
     var genPassword = "";
 
+//for loop to generate password    
     for (let i = 0; i < userOptions.passwordLength; i++) {
+//variables to generate randow characters from the array 
     var randomNumber = Math.floor(Math.random() * possibleArrays.length);
     var randomChar = possibleArrays[randomNumber]
     genPassword += randomChar 
       
   }
 
-  // Display password to the page
+//return and display password to the page
   return genPassword;
 }
 
