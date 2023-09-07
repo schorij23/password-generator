@@ -10,15 +10,37 @@ function passwordCharOptions() {
     prompt('Enter password length between 8 and 128 Characters'), 12
   );
 
-  var minLength = 8;
-  var maxLength = 128;
+  
 
 //condition to make sure password is a number and between 8 and 128 Characters  
-  
+
+//DOESNT WORK OVER 99? TRIED 3 DIFFERENT WAYS, PROMPTS?
+
+// 3 SEPERATE IF STATEMENTS
+
+// if (Number.isNaN(passwordLength)) {
+//   alert('Password must have numbers');
+//   return null;
+// }
+
+// if (passwordLength < 8) {
+//   alert("Password must have atleast 8 Characters");
+//   return null;
+// }
+// if (passwordLength > 128) {
+//   alert('Password cannot have more that 128 Characters');
+//   return null;
+// }
+
+// ALL 3 IN ONE WITH NUMBER
+
 // if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
 //   alert('Password length must be a number and be between 8 and 128 Characters');
 //   return null;
 // }
+
+var minLength = 8;
+var maxLength = 128;
 
 if (Number.isNaN(passwordLength) || passwordLength < minLength || passwordLength > maxLength) {
     alert('Password length must be a number and be between 8 and 128 Characters');
