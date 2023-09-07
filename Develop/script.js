@@ -69,7 +69,7 @@ function generatePassword() {
 
 //for loop to generate password    
     for (let i = 0; i < userOptions.passwordLength; i++) {
-//variables to generate randow characters from the array 
+//variables to generate random characters from the array 
     var randomNumber = Math.floor(Math.random() * possibleArrays.length);
     var randomChar = possibleArrays[randomNumber]
     genPassword += randomChar 
