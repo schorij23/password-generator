@@ -64,7 +64,7 @@ function generatePassword() {
   if (userOptions.passwordSpecialC) {
     possibleArrays = possibleArrays.concat(specialChar)
   }
-//Variable to store the password that was generated
+////Variable to store the password that was generated
     var genPassword = "";
 
 //for loop to generate password    
