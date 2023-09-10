@@ -24,7 +24,7 @@ if (Number.isNaN(passwordLength) || passwordLength < minLength || passwordLength
 let passwordLowercase = confirm("Do you want to use Lowercase, Click Ok for Yes or Cancel for No")
 let passwordUppercase = confirm("Do you want to use Uppercase, Click Ok for Yes or Cancel for No")
 let passwordNumber = confirm("Do you want to use Numbers, Click Ok for Yes or Cancel for No")
-let passwordSpecialC = confirm("Do you want to use Lowercase, Click Ok for Yes or Cancel for No");
+let passwordSpecialC = confirm("Do you want to use Special Characters, Click Ok for Yes or Cancel for No");
 
 //Conditional Statement that checks the user password for the minimum required characters or the prompt will end
   if (!passwordLowercase && !passwordUppercase && !passwordNumber && !passwordSpecialC) {
