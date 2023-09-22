@@ -28,4 +28,6 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
+https://schorij23.github.io/password-generator/
 
+![Screenshot 2023-09-22 at 11-10-36 Password Generator](https://github.com/schorij23/password-generator/assets/5600528/2cc8a2f4-3490-4888-8e24-194b64f48eab)
